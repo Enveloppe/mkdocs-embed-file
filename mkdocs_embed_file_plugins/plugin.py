@@ -180,7 +180,7 @@ class EmbedFile(BasePlugin):
         md_link_path = ""
         callout = self.config["callouts"]
         language_message = self.config["language_message"]
-        for link in soup.findAll(
+        for link in soup.find_all(
             "img",
             src=lambda src: src is not None
             and "favicon" not in src
