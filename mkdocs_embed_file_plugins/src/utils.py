@@ -1,5 +1,7 @@
 import re
+
 from bs4 import BeautifulSoup
+
 
 def strip_comments(markdown):
     file_content = markdown.split("\n")
@@ -36,6 +38,6 @@ def add_not_found_class(html):
                 if attr != "href":
                     new_tag[attr] = a_tag[attr]
             new_tag["src"] = clean_href
-            a_tag.replaceWith(new_tag)
+            a_tag.replace_with(new_tag)
 
     return str(soup)
